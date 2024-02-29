@@ -3,6 +3,10 @@ from pythonosc.osc_server import AsyncIOOSCUDPServer
 import asyncio
 import numpy as np
 import sys
+from adafruit_servokit import ServoKit
+import time
+
+kit = ServoKit(channels=16)
 np.set_printoptions(threshold=sys.maxsize)
 
 ip = "127.0.0.1"
@@ -10,6 +14,7 @@ port = 1337
 
 def grid_val_handler(address, *args):
     print(f"{address}: {args}")
+    moveServo(0, args[2])
     DATA_GRID[args[0]][args[1]] = args[2]
 
 dispatcher = Dispatcher()
@@ -19,6 +24,14 @@ NUM_ROWS = 50
 NUM_COLS = 50
 DATA_RANGE = [-10, 10]
 DATA_GRID = np.zeros((NUM_ROWS, NUM_COLS))
+HIGH_ANGLE = 180
+LOW_ANGLE = 0
+
+
+def moveServo(servoNum, dataval):
+    angle = (dataval - DATA_RANGE[0]) * (HIGH_ANGLE - LOW_ANGLE)/(DATA_RANGE[1] - DATA_RANGE[0]) + LOW_ANGLE
+    kit.servo[servoNum].angle =angle
+
 
 async def loop():
     while True:
@@ -29,6 +42,7 @@ async def loop():
 async def init_main():
     server = AsyncIOOSCUDPServer((ip, port), dispatcher, asyncio.get_event_loop())
     transport, protocol = await server.create_serve_endpoint()
+    kit.servo[0].angle = 90
 
     await loop()
 
