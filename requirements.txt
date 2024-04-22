@@ -1,0 +1,3 @@
+adafruit-circuitpython-servokit==1.3.17
+python-osc==1.8.3
+asyncio==3.4.3
