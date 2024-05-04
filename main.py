@@ -1,20 +1,22 @@
-import ShapeDisplayManager, OSCManager
+from ShapeDisplayManager import ShapeDisplayManager
+from OSCManager import OSCManager
 import asyncio
 
 IP = "127.0.0.1"
-PORT = 1337
+PORT = 1338
 
 async def loop():
     while True:
-        # print("would be setting actuators, interpretting input etc here")
         await asyncio.sleep(0)
 
 async def main():
     displayManager = ShapeDisplayManager(16)
-    await displayManager.zeroAllServos()
-    oscManager = OSCManager(IP, PORT)
+    displayManager.zeroAllServos()
+    oscManager = OSCManager(IP, PORT, displayManager)
     transport, protocol = await oscManager.init_osc()
 
     await loop()
 
     transport.close()
+
+asyncio.run(main())

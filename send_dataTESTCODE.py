@@ -6,7 +6,9 @@ NUM_ROWS = 50
 NUM_COLS = 50
 DATA_RANGE = [-1, 1]
 
-client = SimpleUDPClient("127.0.0.1", 1337)
+client = SimpleUDPClient("127.0.0.1", 1338)
+
+# client.send_message("/block", [0, .5])
 
 while True:
     x = random.randint(0, 15)

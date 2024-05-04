@@ -6,12 +6,13 @@ from servo_utils import *
 import ShapeDisplayManager
 
 class OSCManager:
-    def __init__(self, ip, port):
+    def __init__(self, ip, port, manager):
         self.ip = ip
         self.port = port
+        self.manager = manager
 
     async def init_osc(self):
-        print("init osc with ip" + self.ip + "and port "+ self.port)
+        print("init osc with ip", self.ip, "and port ", self.port)
         dispatcher = Dispatcher()
         dispatcher.map("/block", self.message_handler)
         server = AsyncIOOSCUDPServer((self.ip, self.port), dispatcher, asyncio.get_event_loop())
@@ -19,14 +20,14 @@ class OSCManager:
         return transport, protocol
     
     # messages will be like "/block servoNum dataVal"
-    async def message_handler(self, address, *args):
+    def message_handler(self, address, *args):
         print(f"{address}: {args}")
         servoNum = args[0]
         dataVal = args[1]
-        newPos = dataValueToShaftHeight(dataVal)
-        positions = ShapeDisplayManager.getLatestPositionsGrid()
-        kit = ShapeDisplayManager.getServoKit()
+        newAng = dataValueToAngle(dataVal)
+        positions = self.manager.getLatestPositionsGrid()
+        kit = self.manager.getServoKit()
 
-        await moveServo(servoNum, newPos, positions, kit)
-        positions = ShapeDisplayManager.getLatestPositionsGrid()
-        saveServoPosition(servoNum, newPos, positions)
+        moveServo(servoNum, newAng, kit)
+        positions = self.manager.getLatestPositionsGrid()
+        saveServoPosition(servoNum, newAng, positions)
