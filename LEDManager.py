@@ -14,6 +14,12 @@ class LEDManager:
             num = row*14 + (13-col)
         return num
 
-    def setLight(self, row, col, dots, brightness):
+    #brightness is a float between 0 and 1
+    def setLight(self, row, col, brightness):
         dotNum = self.rowColConvert(row, col)
-        dots[dotNum].brightness(brightness)
+        fillnum = 255 * brightness
+        self.dots[dotNum].fill(fillnum, fillnum, fillnum)
+
+    def setLight(self, ledIndex, brightness):
+        fillnum = 255 * brightness
+        self.dots[ledIndex].fill(fillnum, fillnum, fillnum)
