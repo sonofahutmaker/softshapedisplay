@@ -5,7 +5,7 @@ ZERO_THROTTLE = 0.02
 SPEED = 1 # float value between 0.0 - 1.0
 
 # data range
-DATA_LOW = -1
+DATA_LOW = 0
 DATA_HIGH = 1
 
 #CONSTANTS FOR CONT ROTATION SERVOS

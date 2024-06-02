@@ -2,7 +2,7 @@ from ShapeDisplayManager import ShapeDisplayManager
 from OSCManager import OSCManager
 import asyncio
 
-IP = "127.0.0.1"
+IP = "192.168.50.93"
 PORT = 1338
 
 async def loop():
