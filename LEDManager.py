@@ -8,10 +8,10 @@ class LEDManager:
 
     #convert from row, col (i.e. 0, 0) to dotstar num 0-210
     def rowColConvert(self, row, col):
-        if row%2 == 0: #if even num row, goes top to bottom
-            num = row*14 + col
-        else: #if odd num row, goes bottom to top
-            num = row*14 + (13-col)
+        if col%2 == 0:
+            num = col*15 + row
+        else:
+            num = col*15 + (14-row)
         return num
 
     #brightness is a float between 0 and 1
