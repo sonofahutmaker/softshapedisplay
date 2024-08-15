@@ -13,9 +13,9 @@ async def loop():
 
 async def main():
     displayManager = ShapeDisplayManager(16)
-    ledManager = LEDManager(LED_NUM)
+    # ledManager = LEDManager(LED_NUM)
     displayManager.zeroAllServos()
-    oscManager = OSCManager(IP, PORT, displayManager, ledManager)
+    oscManager = OSCManager(IP, PORT, displayManager)
     transport, protocol = await oscManager.init_osc()
 
     await loop()
