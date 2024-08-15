@@ -1,6 +1,5 @@
 from ShapeDisplayManager import ShapeDisplayManager
 from OSCManager import OSCManager
-from LEDManager import LEDManager
 import asyncio
 
 IP = "192.168.50.93"
@@ -13,7 +12,6 @@ async def loop():
 
 async def main():
     displayManager = ShapeDisplayManager(16)
-    # ledManager = LEDManager(LED_NUM)
     displayManager.zeroAllServos()
     oscManager = OSCManager(IP, PORT, displayManager)
     transport, protocol = await oscManager.init_osc()
