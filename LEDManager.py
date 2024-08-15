@@ -4,7 +4,7 @@ import adafruit_dotstar as dotstar
 class LEDManager:
     def __init__(self, ledNum):
         self.lednum = ledNum
-        self.dots = dotstar.DotStar(board.D6, board.D5, self.lednum, brightness=0.2)
+        self.dots = dotstar.DotStar(board.SCK, board.MOSI, self.lednum, brightness=0.2)
 
     #convert from row, col (i.e. 0, 0) to dotstar num 0-210
     def rowColConvert(self, row, col):
@@ -23,3 +23,8 @@ class LEDManager:
     def setLight(self, ledIndex, brightness):
         fillnum = 255 * brightness
         self.dots[ledIndex].fill(fillnum, fillnum, fillnum)
+
+    def setAllLights(self):
+        fill = 255
+        for i in range(0, 210):
+            self.dots.fill((fill, fill, fill))

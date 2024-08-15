@@ -3,20 +3,23 @@ import time
 from servo_utils import *
 import asyncio
 import random
+from LEDManager import *
 
+ledman = LEDManager(210)
+ledman.setAllLights()
 kit = ServoKit(channels=16)
 # kit.servo[0].angle = 0
-async def main():
-    while True:
-        print("going")
-        kit.servo[0].angle=180
-        time.sleep(1)
-        kit.servo[0].angle =0
-        time.sleep(1)
+# async def main():
+#     while True:
+#         print("going")
+#         kit.servo[0].angle=180
+#         time.sleep(1)
+#         kit.servo[0].angle =0
+#         time.sleep(1)
 
 # asyncio.run(main())
-for i in range(0, 16):
-    moveServo(i, LOWEST_ANGLE, kit)
+# for i in range(0, 16):
+#     moveServo(i, LOWEST_ANGLE, kit)
 
 # moveServo(12, HIGHEST_ANGLE, kit)
 # time.sleep(3)
