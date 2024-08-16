@@ -23,13 +23,6 @@ ZERO_ANGLE = 90
 LOWEST_ANGLE = 180
 HIGHEST_ANGLE = 0
 
-# def read_ini(key, cat='DEFAULT'):
-#     config = configparser.ConfigParser()
-#     config.read('config.ini')
-#     if config[cat][key]:
-#         return config[cat][key]
-#     return False
-
 DEFAULTS = {'data_range': ["0.0", "1.0"], 
             'angle_range': ["180", "0"]}
 
@@ -63,7 +56,6 @@ def generate_ini(args):
 
     with open('config.ini', 'w') as configfile:
         config.write(configfile)
-
 
 # STANDARD SERVO FUNCTION
 def dataValueToAngle(val):
