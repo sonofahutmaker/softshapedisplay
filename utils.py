@@ -1,3 +1,5 @@
+import configparser
+
 # data range
 DATA_LOW = 0
 DATA_HIGH = 1
@@ -20,6 +22,48 @@ SPEED = 1 # float value between 0.0 - 1.0
 ZERO_ANGLE = 90
 LOWEST_ANGLE = 180
 HIGHEST_ANGLE = 0
+
+# def read_ini(key, cat='DEFAULT'):
+#     config = configparser.ConfigParser()
+#     config.read('config.ini')
+#     if config[cat][key]:
+#         return config[cat][key]
+#     return False
+
+DEFAULTS = {'data_range': ["0.0", "1.0"], 
+            'angle_range': ["180", "0"]}
+
+# must have IP address and port num on first config
+def generate_ini(args):
+    #if not in args, look in ini
+    #if not in ini, look to defaults
+    args_keys = ['ip', 'port', 'data_range','angle_range']
+    config = configparser.ConfigParser()
+    config.read('config.ini')
+    if 'DEFAULT' not in config:
+        config['DEFAULT'] = {}
+    argsdict = vars(args)
+    for key in args_keys:
+        if argsdict[key]:
+            if isinstance(argsdict[key], list):
+                config[key] = {}
+                config[key]["low"] = argsdict[key][0]
+                config[key]["high"] = argsdict[key][1]
+            else:
+                config['DEFAULT'][key] = argsdict[key]
+        else:
+            if key not in config and key not in config['DEFAULT']:
+                default = DEFAULTS[key]
+                if isinstance(default, list):
+                    config[key] = {}
+                    config[key]["low"] = default[0]
+                    config[key]["high"] = default[1]
+                else:
+                    config['DEFAULT'][key] = default
+
+    with open('config.ini', 'w') as configfile:
+        config.write(configfile)
+
 
 # STANDARD SERVO FUNCTION
 def dataValueToAngle(val):
