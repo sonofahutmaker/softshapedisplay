@@ -5,9 +5,9 @@ from utils import *
 from servo_utils import *
 
 class OSCManager:
-    def __init__(self, ip, port, manager):
-        self.ip = ip
-        self.port = port
+    def __init__(self, manager):
+        self.ip = retrieve_config("ip")
+        self.port = retrieve_config("port")
         self.manager = manager
 
     async def init_osc(self):
@@ -26,23 +26,23 @@ class OSCManager:
         for i in range(len(args)):
             servoNum = i
             dataVal = args[i]
-            newAng = dataValueToAngle(dataVal)
-            # positions = self.manager.getLatestPositionsGrid()
             kit = self.manager.getServoKit()
 
-            moveServo(servoNum, newAng, kit)
             positions = self.manager.getLatestPositionsGrid()
-            saveServoPosition(servoNum, newAng, positions)
+            #MUST AWAIT WHEN CONT SERVOS
+            self.manager.servos.moveServo(servoNum, positions, kit, dataVal)
+            positions = self.manager.getLatestPositionsGrid()
+            # saveServoPosition(servoNum, newAng, positions) # make this agnostic
     
     # messages will be like "/block servoNum dataVal"
     def block_message_handler(self, address, *args):
         print(f"{address}: {args}")
         servoNum = args[0]
         dataVal = args[1]
-        newAng = dataValueToAngle(dataVal)
+        newAng = self.manager.servos.dataValueToAngle(dataVal)
         # positions = self.manager.getLatestPositionsGrid()
         kit = self.manager.getServoKit()
 
-        moveServo(servoNum, newAng, kit)
+        self.manager.servos.moveServo(servoNum, newAng, kit)
         positions = self.manager.getLatestPositionsGrid()
         saveServoPosition(servoNum, newAng, positions)
