@@ -10,16 +10,15 @@ class StandardServo(Servo):
                            min(self.lowest_angle, self.highest_angle))/2
         self.zero_val = self.zero_angle
         
-    def zeroServo(self, servoNum, servoKit):
+    async def zeroServo(self, servoNum, servoKit):
         print("zeroing servonum ", servoNum)
-        # servoKit.servo[servoNum].angle = self.zero_angle UNCOMMENT THIS
+        servoKit.servo[servoNum].angle = self.zero_angle
     
-    # async def moveServo(self, servoNum, newPos, positions, servoKit):
-    def moveServo(self, servoNum, positions, servoKit, data_val):
-    # def moveServo(self, servoNum, newAngle, servoKit):
+    async def moveServo(self, servoNum, positions, servoKit, data_val, shapeManager):
         newAngle = self.dataValueToAngle(data_val)
         print("moving servo ", servoNum, "to ", newAngle)
-        # servoKit.servo[servoNum].angle = newAngle UNCOMMENT
+        servoKit.servo[servoNum].angle = newAngle
+        shapeManager.updatePositionGrid(servoNum, newAngle)
 
     def dataValueToAngle(self, val):
         angle = (val - self.data_low) * (self.highest_angle - self.lowest_angle) / (

@@ -1,7 +1,6 @@
 import configparser
 from enum import Enum
 
-
 class ServoType(Enum):
     STANDARD = "standard"
     CONT = "cont"
@@ -30,7 +29,7 @@ def generate_ini(args):
     #if not in ini, look to defaults
     args_keys = ['ip', 'port', 'data_range','angle_range', 'servo_type',
                 'shaft_len', 'traversal_time', 'forward_throttle',
-                'backward_throttle', 'zero_throttle', "speed"]
+                'backward_throttle', 'zero_throttle', 'speed', 'num_servos']
     config = configparser.ConfigParser()
     config.read('config.ini')
     if 'DEFAULT' not in config:

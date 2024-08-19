@@ -2,7 +2,6 @@ from pythonosc.dispatcher import Dispatcher
 from pythonosc.osc_server import AsyncIOOSCUDPServer
 import asyncio
 from utils import *
-from servo_utils import *
 
 class OSCManager:
     def __init__(self, manager):
@@ -23,26 +22,20 @@ class OSCManager:
     # a list of data values for the whole number of servos
     def list_message_handler(self, address, *args):
         print(f"{address}: {args}")
+        evloop = asyncio.get_event_loop()
+        kit = self.manager.getServoKit()
         for i in range(len(args)):
             servoNum = i
             dataVal = args[i]
-            kit = self.manager.getServoKit()
-
             positions = self.manager.getLatestPositionsGrid()
-            #MUST AWAIT WHEN CONT SERVOS
-            self.manager.servos.moveServo(servoNum, positions, kit, dataVal)
-            positions = self.manager.getLatestPositionsGrid()
-            # saveServoPosition(servoNum, newAng, positions) # make this agnostic
+            evloop.create_task(self.manager.servos.moveServo(servoNum, positions, kit, dataVal, self.manager))
     
     # messages will be like "/block servoNum dataVal"
     def block_message_handler(self, address, *args):
         print(f"{address}: {args}")
         servoNum = args[0]
         dataVal = args[1]
-        newAng = self.manager.servos.dataValueToAngle(dataVal)
-        # positions = self.manager.getLatestPositionsGrid()
-        kit = self.manager.getServoKit()
-
-        self.manager.servos.moveServo(servoNum, newAng, kit)
+        evloop = asyncio.get_event_loop()
         positions = self.manager.getLatestPositionsGrid()
-        saveServoPosition(servoNum, newAng, positions)
+        kit = self.manager.getServoKit()
+        evloop.create_task(self.manager.servos.moveServo(servoNum, positions, kit, dataVal, self.manager))

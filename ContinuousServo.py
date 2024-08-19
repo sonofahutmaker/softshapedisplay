@@ -51,8 +51,7 @@ class ContinuousServo(Servo):
         print("stopping servo ", servoNum)
         servoKit.continuous_servo[servoNum].throttle = self.zero_throttle
 
-    async def moveServo(self, servoNum, positions, servoKit, data_val):
-        print("HERE")
+    async def moveServo(self, servoNum, positions, servoKit, data_val, shapeManager):
         oldPos = positions[servoNum]
         newPos = self.dataValueToShaftHeight(data_val)
         dist = self.getDistanceToTravel(oldPos, newPos)
@@ -63,3 +62,4 @@ class ContinuousServo(Servo):
         await asyncio.sleep(timeTaken)
         print("after ", timeTaken, "seconds, stopping servo ", servoNum)
         servoKit.continuous_servo[servoNum].throttle = self.zero_throttle
+        shapeManager.updatePositionGrid(servoNum, newPos)

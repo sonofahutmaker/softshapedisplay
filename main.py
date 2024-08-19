@@ -12,6 +12,7 @@ def parse_my_args():
     parser = argparse.ArgumentParser()
     parser.add_argument("-ip", required=not check_ini())
     parser.add_argument("-p", "--port", required=not check_ini())
+    parser.add_argument("-n", "--num_servos", required=not check_ini())
     parser.add_argument("-d", "--data_range", nargs='+')
     parser.add_argument("-a", "--angle_range", nargs='+')
     parser.add_argument("-s", "--servo_type", choices=["standard", "cont"])
@@ -37,8 +38,8 @@ async def main():
     args = parse_my_args()
     generate_ini(args)
     servo_type = retrieve_config('servo_type')
-    displayManager = ShapeDisplayManager(16, servo_type)
-    displayManager.zeroAllServos()
+    displayManager = ShapeDisplayManager(int(retrieve_config('num_servos')), servo_type)
+    await displayManager.zeroAllServos()
     oscManager = OSCManager(displayManager)
     transport, protocol = await oscManager.init_osc()
 

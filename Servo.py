@@ -6,7 +6,7 @@ class Servo:
         self.data_high = float(retrieve_config("high", "data_range"))
 
     # save current servo pos in data structure
-    def saveServoPosition(servoNum, pos, positions):
+    def saveServoPosition(self, servoNum, pos, positions):
         positions[servoNum] = pos
         return positions
     
