@@ -5,15 +5,19 @@ class ServoType(Enum):
     STANDARD = "standard"
     CONT = "cont"
 
-DEFAULTS = {'data_range': ["0.0", "1.0"], 
-            'angle_range': ["180", "0"],
+# default values based on original build for 
+# standard and rotational servos, can either be
+# modified here or using command line arguments
+# to be saved ini file
+DEFAULTS = {'data_range': ["0.0", "1.0"], # incoming data range
+            'angle_range': ["180", "0"], # standard servo angle range -- order depends on orientation
             'servo_type': ServoType.STANDARD.value,
-            'shaft_len': "152.4",
-            'traversal_time': "2.1",
-            'forward_throttle': "-1",
-            'backward_throttle': "1",
-            'zero_throttle': "0.02",
-            'speed': "1"
+            'shaft_len': "152.4", # here and below are for cont. rotation servos
+            'traversal_time': "2.1", # time in s to traverse whole shaft len at full speed
+            'forward_throttle': "-1", # direction and power value for moving shafts up
+            'backward_throttle': "1", # direction and power value for moving shafts down
+            'zero_throttle': "0.02", # throttle value that stops servo spinning
+            'speed': "1" # multiplier for throttle
             }
 
 def retrieve_config(key, cat="DEFAULT"):
