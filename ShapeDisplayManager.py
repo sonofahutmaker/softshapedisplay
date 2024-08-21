@@ -13,6 +13,7 @@ class ShapeDisplayManager:
             self.servos = StandardServo()
         elif servo_type == ServoType.CONT.value:
             self.servos = ContinuousServo()
+        # servo zero_val is the pos when data value is middle of data range
         self.positions = [self.servos.zero_val] * self.num_servos 
     
     async def zeroAllServos(self):
