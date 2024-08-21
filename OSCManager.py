@@ -9,9 +9,11 @@ class OSCManager:
         self.port = retrieve_config("port")
         self.manager = manager
 
+    # will wait for osc messages and then map to handler functions
     async def init_osc(self):
         print("init osc with ip", self.ip, "and port ", self.port)
         dispatcher = Dispatcher()
+        # new handler functions with unique addresses can follow the below 
         dispatcher.map("/block", self.block_message_handler)
         dispatcher.map("/list", self.list_message_handler)
         server = AsyncIOOSCUDPServer((self.ip, self.port), dispatcher, asyncio.get_event_loop())
