@@ -1,18 +1,25 @@
 from adafruit_servokit import ServoKit 
-import servo_utils
 from utils import *
+from StandardServo import StandardServo
+from ContinuousServo import ContinuousServo
+import asyncio
 
 class ShapeDisplayManager:
-    def __init__(self, num_servos):
+    def __init__(self, num_servos, servo_type):
         print("initializing shape display manager with num servos: ", num_servos)
         self.num_servos = num_servos
         self.kit = ServoKit(channels=self.num_servos)
-        self.positions = [ZERO_ANGLE] * self.num_servos
-
-    def zeroAllServos(self):
-        for i in range(self.num_servos):
-            servo_utils.zeroServo(i, self.kit)
+        if servo_type == ServoType.STANDARD.value:
+            self.servos = StandardServo()
+        elif servo_type == ServoType.CONT.value:
+            self.servos = ContinuousServo()
+        self.positions = [self.servos.zero_val] * self.num_servos 
     
+    async def zeroAllServos(self):
+        async with asyncio.TaskGroup() as tg:
+            for i in range(self.num_servos):
+                tg.create_task(self.servos.zeroServo(i, self.kit))
+
     def getLatestPositionsGrid(self):
         return self.positions
     
@@ -20,4 +27,4 @@ class ShapeDisplayManager:
         return self.kit
     
     def updatePositionGrid(self, servoNum, newPos):
-        self.positions = servo_utils.saveServoPosition(servoNum, newPos, self.positions)
+        self.positions = self.servos.saveServoPosition(servoNum, newPos, self.positions)
