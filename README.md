@@ -1,11 +1,11 @@
 # SILICONE DREAM
 The complexity of meshing physical design requirements with data-driven logic has long been the focus and vexation of artists and engineers wanting to build kinetic sculptural and data display artifacts. Traditional shape displays require high complexity, as previous models require a one to one ratio between actuator number and data resolution. We present SILICONE DREAM, an open-source system for building soft shape display devices which can convey trends about continuous data as well as function in artistic installations. SILICONE DREAM utilizes a silicone top layer over a grid of actuator controlled shafts in order to interpolate between data values without added design complexity. SILICONE DREAM functions as a kinetic sculptural object which can be positioned either horizontally or vertically and has been designed for live collaboration with performing artists and as a self-contained system for generating changing 3D shapes. Because the SILICONE DREAM system is modular, it can easily expand to incorporate other forms of media such as screen-based visuals and generative audio. SILICONE DREAM is controlled by an embedded system with custom software, and contributes a generalizable system for future shape display design for both artistic and scientific use cases.
 
-<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1020710513?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="SILICONE DREAM: Horizontal Display"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+https://vimeo.com/1020710513?share=copy#t=0
 
 The first SILICONE DREAM soft shape display device replicating changing generated terrain (example application wave-terrain-synth-visual).
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/o8n0LYaVpVw?si=AtXMhMnZINhh5Gpc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+https://youtu.be/o8n0LYaVpVw?si=xBZ51qVCjUL302s2
 
 The first SILICONE DREAM soft shape display device responding to music in real time.
 
