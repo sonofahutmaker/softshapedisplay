@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ -1742.0, 176.0, 1278.0, 870.0 ],
+		"rect" : [ -1886.0, 87.0, 1852.0, 959.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -47,7 +47,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1317.0, 614.0, 50.0, 35.0 ],
-					"text" : "4.204688"
+					"text" : "2.928041"
 				}
 
 			}
@@ -137,7 +137,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1748.0, 493.0, 50.0, 35.0 ],
-					"text" : "0.801172"
+					"text" : "0.48201"
 				}
 
 			}
@@ -162,7 +162,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1800.0, 382.0, 50.0, 35.0 ],
-					"text" : "-0.005128"
+					"text" : "-0.003807"
 				}
 
 			}
@@ -271,7 +271,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 722.0, 248.0, 50.0, 35.0 ],
-					"text" : "0.801172"
+					"text" : "0.48201"
 				}
 
 			}
@@ -295,7 +295,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 556.0, 181.0, 50.0, 22.0 ],
-					"text" : "492"
+					"text" : "90"
 				}
 
 			}
@@ -320,7 +320,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 941.0, 419.0, 50.0, 35.0 ],
-					"text" : "-1.961184"
+					"text" : "0.914152"
 				}
 
 			}
@@ -408,7 +408,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 836.0, 261.0, 50.0, 35.0 ],
-					"text" : "2735.394435"
+					"text" : "320.11239"
 				}
 
 			}
@@ -479,7 +479,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 339.0, 1921.5, 335.0, 49.0 ],
-					"text" : "/list 0.348033 0.278775 0.464994 0.466379 0.623699 0.567318 0.444453 0.317671 0.432851 0.519743 0.313233 0.456465 0.392444 0.340643 0.200607 0.299428"
+					"text" : "/list 0.568617 0.625875 0.48192 0.462274 0.472928 0.55463 0.490913 0.277384 0.409088 0.469484 0.519082 0.519628 0.549361 0.622232 0.861468 0.398075"
 				}
 
 			}
@@ -2023,7 +2023,7 @@
 									"maxclass" : "inlet",
 									"numinlets" : 0,
 									"numoutlets" : 1,
-									"outlettype" : [ "" ],
+									"outlettype" : [ "signal" ],
 									"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ]
 								}
 
@@ -2036,7 +2036,7 @@
 									"maxclass" : "inlet",
 									"numinlets" : 0,
 									"numoutlets" : 1,
-									"outlettype" : [ "" ],
+									"outlettype" : [ "signal" ],
 									"patching_rect" : [ 211.0, 40.0, 30.0, 30.0 ]
 								}
 
@@ -2637,7 +2637,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 3,
-					"outlettype" : [ "", "", "" ],
+					"outlettype" : [ "signal", "signal", "signal" ],
 					"patching_rect" : [ 465.0, 300.0, 144.0, 22.0 ],
 					"text" : "th.wave.polar~ bfgTerrain"
 				}
@@ -4427,13 +4427,27 @@
 		}
 ,
 		"dependency_cache" : [ 			{
+				"name" : "_polar.tableread~.maxpat",
+				"bootpath" : "~/Desktop/Year2Grad/q2/thesis/scripts/softshapedisplay/example_apps",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "jit.mo.time.mxo",
 				"type" : "iLaX"
 			}
 , 			{
+				"name" : "th.wave.polar~.maxpat",
+				"bootpath" : "~/Desktop/Year2Grad/q2/thesis/scripts/softshapedisplay/example_apps",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "th.wave.terrain.maxpat",
-				"bootpath" : "~/Desktop/Year2Grad/q2/thesis/max",
-				"patcherrelativepath" : "../../../max",
+				"bootpath" : "~/Desktop/Year2Grad/q2/thesis/scripts/softshapedisplay/example_apps",
+				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
