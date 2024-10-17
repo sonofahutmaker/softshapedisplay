@@ -18,7 +18,7 @@ https://github.com/user-attachments/assets/90aeedf5-37ed-43ab-a104-1c8a341bd6bf
 The first SILICONE DREAM soft shape display device responding to music in real time.
 
 ## Software Setup Guide
-This setup guide relates only to the software side of building a shape display. Please follow the Instructables link for building directions for the hardware portion of the shape display. The software libraries can be used with different shape display hardware setups, including changing number of actuators, so the hardware can be changed to better fit your use cases.
+This setup guide relates only to the software side of building a shape display. Please follow the [Instructables link](https://www.instructables.com/SILICONE-DREAM-Soft-Shape-Display-Device/) for building directions for the hardware portion of the shape display. The software libraries can be used with different shape display hardware setups, including changing number of actuators, so the hardware can be changed to better fit your use cases.
 
 ### **1. On Raspberry Pi, clone repo:**
 
