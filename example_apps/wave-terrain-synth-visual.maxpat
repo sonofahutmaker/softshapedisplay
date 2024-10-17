@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 87.0, 1372.0, 721.0 ],
+		"rect" : [ 34.0, 87.0, 1372.0, 717.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -47,7 +47,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1317.0, 614.0, 50.0, 35.0 ],
-					"text" : "1.899348"
+					"text" : "2.896794"
 				}
 
 			}
@@ -137,7 +137,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1748.0, 493.0, 50.0, 35.0 ],
-					"text" : "0.224521"
+					"text" : "-0.001873"
 				}
 
 			}
@@ -162,7 +162,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1800.0, 382.0, 50.0, 35.0 ],
-					"text" : "-0.000316"
+					"text" : "-0.003851"
 				}
 
 			}
@@ -187,7 +187,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1549.0, 486.0, 50.0, 35.0 ],
-					"text" : "1.00004"
+					"text" : "0.474198"
 				}
 
 			}
@@ -211,7 +211,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1566.0, 375.0, 59.0, 22.0 ],
-					"text" : "0.002058"
+					"text" : "0.003157"
 				}
 
 			}
@@ -252,7 +252,6 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-60",
-					"int" : 1,
 					"maxclass" : "gswitch2",
 					"numinlets" : 2,
 					"numoutlets" : 2,
@@ -271,7 +270,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 722.0, 248.0, 50.0, 35.0 ],
-					"text" : "0.224521"
+					"text" : "0.474198"
 				}
 
 			}
@@ -295,7 +294,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 556.0, 181.0, 50.0, 22.0 ],
-					"text" : "110"
+					"text" : "88"
 				}
 
 			}
@@ -320,7 +319,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 941.0, 419.0, 50.0, 35.0 ],
-					"text" : "0.768911"
+					"text" : "0.922845"
 				}
 
 			}
@@ -408,7 +407,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 836.0, 261.0, 50.0, 35.0 ],
-					"text" : "326.354663"
+					"text" : "312.810123"
 				}
 
 			}
@@ -454,8 +453,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 490.0, 1717.0, 40.0, 22.0 ],
-					"text" : "/block"
+					"patching_rect" : [ 490.0, 1717.0, 29.5, 22.0 ],
+					"text" : "/list"
 				}
 
 			}
@@ -479,7 +478,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 339.0, 1921.5, 335.0, 49.0 ],
-					"text" : "/block 0.522245 0.343601 0.626603 0.606713 0.506913 0.38802 0.304346 0.820613 0.681319 0.255827 0.20557 0.673221 0.743516 0.570137 0.464745 0.224227"
+					"text" : "/list 0.662886 0.444975 0.694392 0.404416 0.717998 0.41795 0.725605 0.395858 0.417813 0.753778 0.608402 0.537883 0.495156 0.668323 0.242863 0.805954"
 				}
 
 			}
@@ -490,8 +489,8 @@
 					"numinlets" : 17,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 648.0, 1852.0, 321.0, 22.0 ],
-					"text" : "pack /block 0. 1. 2. 3. 4. 5. 6. 7. 8. 9. 10. 11. 12. 13. 14. 15."
+					"patching_rect" : [ 648.0, 1852.0, 308.0, 22.0 ],
+					"text" : "pack /list 0. 1. 2. 3. 4. 5. 6. 7. 8. 9. 10. 11. 12. 13. 14. 15."
 				}
 
 			}
@@ -2023,7 +2022,7 @@
 									"maxclass" : "inlet",
 									"numinlets" : 0,
 									"numoutlets" : 1,
-									"outlettype" : [ "signal" ],
+									"outlettype" : [ "" ],
 									"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ]
 								}
 
@@ -2036,7 +2035,7 @@
 									"maxclass" : "inlet",
 									"numinlets" : 0,
 									"numoutlets" : 1,
-									"outlettype" : [ "signal" ],
+									"outlettype" : [ "" ],
 									"patching_rect" : [ 211.0, 40.0, 30.0, 30.0 ]
 								}
 
@@ -2637,7 +2636,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 3,
-					"outlettype" : [ "signal", "signal", "signal" ],
+					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 465.0, 300.0, 144.0, 22.0 ],
 					"text" : "th.wave.polar~ bfgTerrain"
 				}
@@ -4427,55 +4426,41 @@
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : "_polar.tableread~.maxpat",
-				"bootpath" : "~/Desktop/Year2Grad/q2/thesis/max",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "jit.mo.time.mxo",
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "th.wave.polar~.maxpat",
-				"bootpath" : "~/Desktop/Year2Grad/q2/thesis/max",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "th.wave.terrain.maxpat",
 				"bootpath" : "~/Desktop/Year2Grad/q2/thesis/max",
-				"patcherrelativepath" : ".",
+				"patcherrelativepath" : "../../../max",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "zsa.abs_flux~.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/zsa.descriptors/misc",
-				"patcherrelativepath" : "../../../../../Documents/Max 8/Packages/zsa.descriptors/misc",
+				"patcherrelativepath" : "../../../../../../../Documents/Max 8/Packages/zsa.descriptors/misc",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "zsa.abs_freqpeak~.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/zsa.descriptors/misc",
-				"patcherrelativepath" : "../../../../../Documents/Max 8/Packages/zsa.descriptors/misc",
+				"patcherrelativepath" : "../../../../../../../Documents/Max 8/Packages/zsa.descriptors/misc",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "zsa.easy_flux~.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/zsa.descriptors/misc",
-				"patcherrelativepath" : "../../../../../Documents/Max 8/Packages/zsa.descriptors/misc",
+				"patcherrelativepath" : "../../../../../../../Documents/Max 8/Packages/zsa.descriptors/misc",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "zsa.easy_freqpeak~.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/zsa.descriptors/misc",
-				"patcherrelativepath" : "../../../../../Documents/Max 8/Packages/zsa.descriptors/misc",
+				"patcherrelativepath" : "../../../../../../../Documents/Max 8/Packages/zsa.descriptors/misc",
 				"type" : "JSON",
 				"implicit" : 1
 			}
